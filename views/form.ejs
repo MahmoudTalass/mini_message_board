@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <form action="/new" method="post">
+         <legend>Send new message</legend>
+         <fieldset>
+            <div class="form_element">
+               <label for="user">Enter your name:</label>
+               <input type="text" id="user" name="user" required />
+            </div>
+            <div class="form_element">
+               <label for="text">Type your message:</label>
+               <textarea name="text" id="text" required placeholder="your message..."></textarea>
+            </div>
+         </fieldset>
+         <button type="submit">Submit</button>
+      </form>
+   </body>
+</html>
