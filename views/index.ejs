@@ -5,18 +5,18 @@
       <link rel="stylesheet" href="/stylesheets/style.css" />
    </head>
    <body>
-      <h1>Welcome to the <%= title %></h1>
-      <article>
-         <ul>
+      <header><h1 class="board_title">Welcome to the <%= title %></h1></header>
+      <section class="board_container">
+         <div class="messages_container">
             <% messages.forEach(user=> { %>
-            <li>
+            <div class="message_container">
                <p>Name: <%= user.user %></p>
-               <p>Message: <%= user.text %></p>
                <p>Posted on: <%= user.added %></p>
-            </li>
+               <p>Message: <%= user.text %></p>
+            </div>
             <% }) %>
-         </ul>
-         <a href="/new">Create new post</a>
-      </article>
+            <a href="/new" class="form_link">Create new post</a>
+         </div>
+      </section>
    </body>
 </html>
