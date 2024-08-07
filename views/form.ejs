@@ -3,17 +3,17 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="stylesheets/style.css" />
-      <title>New Message Form</title>
+      <link rel="stylesheet" href="/style.css" />
+      <title><%=title%></title>
    </head>
    <body>
       <form action="/new" method="post">
          <legend>Send new message</legend>
-         <div class="form_element">
-            <label for="user">Enter your name:</label>
-            <input type="text" id="user" name="user" required />
+         <div class="form-element">
+            <label for="username">Enter your name:</label>
+            <input type="text" id="username" name="username" required />
          </div>
-         <div class="form_element">
+         <div class="form-element">
             <label for="text">Type your message:</label>
             <textarea
                name="text"
