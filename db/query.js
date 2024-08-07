@@ -1,20 +1,19 @@
-const db = require("../db/pool");
+const pool = require("./pool");
 
 async function getAllMessages() {
-   const { rows } = await db.query("SELECT * FROM board_messages");
+   const { rows } = await pool.query("SELECT * FROM board_messages");
    return rows;
 }
 
 async function getMessage(id) {
-   const { rows } = await db.query("SELECT * FROM board_messages WHERE id = $1)", [id]);
+   const { rows } = await pool.query("SELECT * FROM board_messages WHERE id = $1", [id]);
    return rows;
 }
 
-async function createMessage({ username, text, added }) {
-   await db.query("INSERT INTO board_messages (username, text, added) VALUES ($1, $2, $3)", [
+async function createMessage({ username, text }) {
+   await pool.query("INSERT INTO board_messages (username, text) VALUES ($1, $2)", [
       username,
       text,
-      added,
    ]);
 }
 
