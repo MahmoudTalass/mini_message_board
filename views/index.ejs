@@ -5,16 +5,19 @@
       <link rel="stylesheet" href="/style.css" />
    </head>
    <body>
-      <header><h1 class="board_title">Welcome to the <%= title %></h1></header>
+      <header><h1 class="board-title">Welcome to the <%= title %></h1></header>
       <section class="board_container">
          <div class="messages_container">
-            <% messages.forEach(user=> { %>
-            <div class="message_container">
-               <p>Name: <%= user.user %></p>
-               <p>Posted on: <%= user.added %></p>
-               <p>Message: <%= user.text %></p>
+            <% messages.forEach(message=> { %>
+            <div class="message-container">
+               <p>Name: <%= message.username %></p>
+               <p>Posted on: <%= message.added.toLocaleString('en-US') %></p>
+               <p>Message: <%= message.text %></p>
+               <a href="/message/<%=message.id%>">View</a>
             </div>
-            <% }) %>
+            <% }) %> <% if (messages.length == 0) {%>
+            <p>No messages to display</p>
+            <%}%>
             <a href="/new" class="form_link">Create new post</a>
          </div>
       </section>
